@@ -10,6 +10,15 @@
 		29023F947344AFBFDE43B20E /* Pods_MyMarvel_MyMarvelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C012E89BA6A3D22A25D8B9A /* Pods_MyMarvel_MyMarvelUITests.framework */; };
 		3D63D3742A0F6ED0000C87EC /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3732A0F6ED0000C87EC /* CustomError.swift */; };
 		3D63D3772A0F7DA2000C87EC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3762A0F7DA2000C87EC /* Reachability.swift */; };
+		3D63D3792A0F801C000C87EC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3782A0F801C000C87EC /* HomeViewModel.swift */; };
+		3D63D37B2A0F8670000C87EC /* ViewUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D37A2A0F8670000C87EC /* ViewUpdatable.swift */; };
+		3D63D37E2A0F86C3000C87EC /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D37D2A0F86C3000C87EC /* ViewState.swift */; };
+		3D63D3812A0F88FF000C87EC /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3802A0F88FF000C87EC /* UITableView+Extension.swift */; };
+		3D63D3832A0F894E000C87EC /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3822A0F894E000C87EC /* UITableViewCell.swift */; };
+		3D63D3862A0F8CA9000C87EC /* CharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3852A0F8CA9000C87EC /* CharacterListCell.swift */; };
+		3D63D3892A0F8D89000C87EC /* CharacterListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D63D3882A0F8D89000C87EC /* CharacterListCell.xib */; };
+		3D63D38B2A0FAA91000C87EC /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38A2A0FAA91000C87EC /* DataContainer.swift */; };
+		3D63D38D2A0FB022000C87EC /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38C2A0FB022000C87EC /* MD5.swift */; };
 		3D7EB5202A07781D00A72C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */; };
 		3D7EB5222A07781D00A72C66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */; };
 		3D7EB5242A07781D00A72C66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5232A07781D00A72C66 /* HomeViewController.swift */; };
@@ -48,6 +57,15 @@
 		3145655538125E101178D0FA /* Pods-MyMarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMarvelTests.release.xcconfig"; path = "Target Support Files/Pods-MyMarvelTests/Pods-MyMarvelTests.release.xcconfig"; sourceTree = "<group>"; };
 		3D63D3732A0F6ED0000C87EC /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		3D63D3762A0F7DA2000C87EC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		3D63D3782A0F801C000C87EC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3D63D37A2A0F8670000C87EC /* ViewUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUpdatable.swift; sourceTree = "<group>"; };
+		3D63D37D2A0F86C3000C87EC /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		3D63D3802A0F88FF000C87EC /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		3D63D3822A0F894E000C87EC /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		3D63D3852A0F8CA9000C87EC /* CharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCell.swift; sourceTree = "<group>"; };
+		3D63D3882A0F8D89000C87EC /* CharacterListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListCell.xib; sourceTree = "<group>"; };
+		3D63D38A2A0FAA91000C87EC /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		3D63D38C2A0FB022000C87EC /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		3D7EB51C2A07781D00A72C66 /* MyMarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +124,8 @@
 		3D63D3722A0F6EC2000C87EC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3D63D37F2A0F88E8000C87EC /* Extensions */,
+				3D63D37C2A0F86B4000C87EC /* ViewState */,
 				3D63D3752A0F7D92000C87EC /* Helpers */,
 				3D63D3732A0F6ED0000C87EC /* CustomError.swift */,
 			);
@@ -116,8 +136,44 @@
 			isa = PBXGroup;
 			children = (
 				3D63D3762A0F7DA2000C87EC /* Reachability.swift */,
+				3D63D37A2A0F8670000C87EC /* ViewUpdatable.swift */,
+				3D63D38C2A0FB022000C87EC /* MD5.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3D63D37C2A0F86B4000C87EC /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				3D63D37D2A0F86C3000C87EC /* ViewState.swift */,
+			);
+			path = ViewState;
+			sourceTree = "<group>";
+		};
+		3D63D37F2A0F88E8000C87EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D63D3802A0F88FF000C87EC /* UITableView+Extension.swift */,
+				3D63D3822A0F894E000C87EC /* UITableViewCell.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3D63D3842A0F8C92000C87EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D63D3872A0F8CB2000C87EC /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D63D3872A0F8CB2000C87EC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D63D3852A0F8CA9000C87EC /* CharacterListCell.swift */,
+				3D63D3882A0F8D89000C87EC /* CharacterListCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3D7EB5132A07781D00A72C66 = {
@@ -145,6 +201,7 @@
 		3D7EB51E2A07781D00A72C66 /* MyMarvel */ = {
 			isa = PBXGroup;
 			children = (
+				3D63D3842A0F8C92000C87EC /* Views */,
 				3D63D3722A0F6EC2000C87EC /* Utils */,
 				3D7EB5542A07E55000A72C66 /* Models */,
 				3D7EB5532A07E50000A72C66 /* Services */,
@@ -204,6 +261,7 @@
 			children = (
 				3D7EB5232A07781D00A72C66 /* HomeViewController.swift */,
 				3D7EB5252A07781D00A72C66 /* Main.storyboard */,
+				3D63D3782A0F801C000C87EC /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -223,6 +281,7 @@
 				3D7EB5572A07E63900A72C66 /* Character.swift */,
 				3D7EB5592A08018700A72C66 /* DataWrapper.swift */,
 				3D7EB55B2A08C54F00A72C66 /* Thumbnail.swift */,
+				3D63D38A2A0FAA91000C87EC /* DataContainer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,6 +434,7 @@
 				3D7EB52C2A07782000A72C66 /* LaunchScreen.storyboard in Resources */,
 				3D7EB5292A07782000A72C66 /* Assets.xcassets in Resources */,
 				3D7EB5272A07781D00A72C66 /* Main.storyboard in Resources */,
+				3D63D3892A0F8D89000C87EC /* CharacterListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,13 +530,21 @@
 			files = (
 				3D7EB55A2A08018700A72C66 /* DataWrapper.swift in Sources */,
 				3D7EB55E2A08C72600A72C66 /* APIService.swift in Sources */,
+				3D63D37E2A0F86C3000C87EC /* ViewState.swift in Sources */,
 				3D7EB5242A07781D00A72C66 /* HomeViewController.swift in Sources */,
+				3D63D37B2A0F8670000C87EC /* ViewUpdatable.swift in Sources */,
+				3D63D3832A0F894E000C87EC /* UITableViewCell.swift in Sources */,
+				3D63D3792A0F801C000C87EC /* HomeViewModel.swift in Sources */,
 				3D7EB55C2A08C54F00A72C66 /* Thumbnail.swift in Sources */,
+				3D63D38D2A0FB022000C87EC /* MD5.swift in Sources */,
 				3D7EB5202A07781D00A72C66 /* AppDelegate.swift in Sources */,
 				3D63D3772A0F7DA2000C87EC /* Reachability.swift in Sources */,
 				3D7EB5222A07781D00A72C66 /* SceneDelegate.swift in Sources */,
+				3D63D38B2A0FAA91000C87EC /* DataContainer.swift in Sources */,
 				3D7EB5582A07E63900A72C66 /* Character.swift in Sources */,
+				3D63D3862A0F8CA9000C87EC /* CharacterListCell.swift in Sources */,
 				3D63D3742A0F6ED0000C87EC /* CustomError.swift in Sources */,
+				3D63D3812A0F88FF000C87EC /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

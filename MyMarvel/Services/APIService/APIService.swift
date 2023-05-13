@@ -6,22 +6,36 @@
 //
 
 import Foundation
+import CommonCrypto
+
 class APIService {
     private enum ApiURL {
         case db
         case base
 
+        var publicKey: String {
+            "9ce1f403c52d5d0643eebc7f43eeaf66"
+        }
+        var privateKey: String {
+            "d5226b3043b633187aaf9924ca292502147bf61a"
+        }
         var baseURL: String {
             switch self {
-            case .db: return "http://gateway.marvel.com/v1/public"
-            case .base: return "http://gateway.marvel.com"
+            case .db: return "https://gateway.marvel.com:443/v1/public"
+            case .base: return "https://gateway.marvel.com"
             }
+        }
+
+        func URL(path: String ) -> String {
+            let ts = NSDate().timeIntervalSince1970.description
+            let md5 = MD5(string: ts+privateKey+publicKey)
+            return "\(ApiURL.db.baseURL)\(path)?ts=\(ts)&apikey=\(publicKey)&hash=\(md5)"
         }
     }
 
     private enum Endpoint {
         case characterList
-
+    
         var path: String {
             switch self {
             case .characterList: return "/characters"
@@ -30,7 +44,7 @@ class APIService {
 
         var url: String {
             switch self {
-            case .characterList: return "\(ApiURL.db.baseURL)\(path)"
+            case .characterList: return ApiURL.db.URL(path: path)
             }
         }
 
@@ -47,6 +61,7 @@ class APIService {
         request.httpMethod = "GET"
 
         URLSession.shared.dataTask(with: request) { data, _, error in
+
             if let error = error {
                 print(#function, "🧨 Request: \(request)\nError: \(error)")
                 completion(.failure(error))
@@ -60,7 +75,7 @@ class APIService {
 
             do {
                 let data = try JSONDecoder().decode(DataWrapper<Character>.self, from: data)
-                completion(.success(data.results))
+                completion(.success(data.data?.results ?? []))
             } catch let error {
                 print(#function, "🧨 Request: \(request)\nError: \(error)")
                 completion(.failure(error))

@@ -6,6 +6,7 @@ target 'MyMarvel' do
   use_frameworks!
 
   # Pods for MyMarvel
+  pod 'Kingfisher', '~> 7.0'
 
   target 'MyMarvelTests' do
     inherit! :search_paths

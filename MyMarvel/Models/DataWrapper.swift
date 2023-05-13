@@ -9,13 +9,15 @@ import Foundation
 
 class DataWrapper<T: Codable>: Codable {
     ///The requested offset (number of skipped results) of the call.
-    var offset: Int?
+    var code: Int?
     ///The requested result limit.
-    var limit: Int?
-    ///The total number of resources available given the current filter set.
-    var total: Int?
-    ///The total number of results returned by this call.
-    var count: Int?
+    var status: String?
     ///The list of Object T returned by the call.
-    var results: [T] = []
+    var data: DataContainer<T>?
+
+    enum CodinKeys: String, CodingKey {
+        case code = "code"
+        case status = "status"
+        case data = "data"
+    }
 }

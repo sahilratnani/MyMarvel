@@ -11,4 +11,14 @@ class Thumbnail: Codable {
     var path: String?
     ///The file extension for the image.
     var `extension`: String?
+
+    var url: String? {
+        guard let path = path, let ext = `extension` else { return nil }
+        return "\(path)/standard_medium.\(ext)"
+    }
+
+    enum CodinKeys: String, CodingKey {
+        case path = "path"
+        case `extension` = "extension"
+    }
 }
