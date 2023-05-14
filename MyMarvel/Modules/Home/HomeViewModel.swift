@@ -7,25 +7,70 @@
 
 import Foundation
 
+enum Types {
+    case all, bookmarked
+}
+
 class HomeViewModel {
-    var characters: [Character] = []
     var delegate: ViewUpdatable?
+    private var state: ViewState {
+        didSet {
+            self.delegate?.didUpdate(with: state)
+        }
+    }
+
+    init() {
+        state = .idle
+    }
+
+    private var characters: [Character] = [] {
+        didSet {
+            filterCharacters()
+        }
+    }
+    private var filteredCharacters: [Character] = []
+    private var selectedType: Types = .all {
+        didSet {
+            filterCharacters()
+        }
+    }
+
     private var maxLimit = 100
     private var isFetchingInProgress = false
 
     var numberOfItems: Int {
-        characters.count
+        filteredCharacters.count
+    }
+
+    private func filterCharacters() {
+        switch selectedType {
+        case .all:
+            filteredCharacters = characters
+            state = .success
+
+        case .bookmarked:
+            filteredCharacters = characters.filter { $0.bookmarked }
+            state = .success
+        }
     }
 
     func getInfo(for indexPath: IndexPath) -> (name: String, desc: String, imageURL: String?, isBookmarked: Bool) {
-        let character = characters[indexPath.row]
+        let character = filteredCharacters[indexPath.row]
         return (name: character.name ?? "", desc: character.description ?? "", imageURL: character.thumbnail?.url, isBookmarked: character.bookmarked)
     }
 
     func toggleCharacterBookmark(at index: Int) {
-        characters[index].bookmarked.toggle()
+        filteredCharacters[index].bookmarked.toggle()
     }
 
+    func filterByType(type: Types) {
+        self.selectedType = type
+    }
+
+}
+
+// MARK: API Calls
+extension HomeViewModel {
     func fetchCharacterList(offset: Int = 0, limit: Int = 20) {
         guard isFetchingInProgress == false else { return }
         isFetchingInProgress = true
@@ -37,12 +82,14 @@ class HomeViewModel {
     }
 
     private func handleResponse(result: Result<[Character], Error>) {
+        guard selectedType == .all else { return }
         switch result {
         case .success(let characters):
             self.characters.append(contentsOf: characters)
-            self.delegate?.didUpdate(with: .success)
+            state = .success
         case .failure(let error):
             self.delegate?.didUpdate(with: .error(error))
+            state = .error(error)
             break
         }
     }

@@ -24,8 +24,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-cE-BH8">
+                                        <rect key="frame" x="0.0" y="42" width="377" height="32"/>
+                                        <segments>
+                                            <segment title="All Characters"/>
+                                            <segment title="Bookmarked"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segnmentDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="06L-SL-vyH"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="18K-oq-WTE">
-                                        <rect key="frame" x="0.0" y="42" width="377" height="751"/>
+                                        <rect key="frame" x="0.0" y="73" width="377" height="720"/>
                                         <color key="backgroundColor" red="0.058823529409999999" green="0.27058823529999998" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableView>
                                 </subviews>
@@ -41,6 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="segmentControl" destination="lBG-cE-BH8" id="fWm-1O-buS"/>
                         <outlet property="tableView" destination="18K-oq-WTE" id="Bvo-4c-TiD"/>
                         <outlet property="titleLabel" destination="rJE-XC-SMq" id="eee-ha-5c7"/>
                     </connections>

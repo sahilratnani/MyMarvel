@@ -8,8 +8,19 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    enum Tab: Int {
+        case allCharacters = 0
+        case bookmarked = 1
+    }
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+
+    private var currentTab: Tab {
+        Tab(rawValue: segmentControl.selectedSegmentIndex) ?? .allCharacters
+    }
 
     var viewModel: HomeViewModel? = HomeViewModel()
 
@@ -31,6 +42,11 @@ class HomeViewController: UIViewController {
         tableView.prefetchDataSource = self
         tableView.registerCell(cellClass: CharacterListCell.self)
     }
+
+    
+    @IBAction func segnmentDidChange(_ sender: UISegmentedControl) {
+        viewModel?.filterByType(type: currentTab == .allCharacters ? .all : .bookmarked)
+    }
 }
 
 extension HomeViewController: UITableViewDelegate  {
@@ -39,7 +55,13 @@ extension HomeViewController: UITableViewDelegate  {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        (viewModel?.numberOfItems ?? 0) + 1
+        let totalItems = viewModel?.numberOfItems ?? 0
+        if currentTab == .allCharacters {
+            // Add 1 to show loading cell
+            return totalItems > 0 ? totalItems+1 : totalItems
+        } else {
+           return totalItems
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +70,7 @@ extension HomeViewController: UITableViewDataSource {
             assertionFailure("Could not get the view model")
             return cell
         }
-        if indexPath.row > vm.numberOfItems-1 {
+        if indexPath.row > vm.numberOfItems-1, currentTab == .allCharacters {
             vm.loadMoreCharacters()
             cell.titleLabel.text = "Loading..."
             return cell
