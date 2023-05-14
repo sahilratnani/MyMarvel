@@ -18,6 +18,12 @@ class CharacterListCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        titleLabel.text = ""
+        descriptionLabel.text = ""
+        charImageView.image = nil
+    }
+    
     func configure(info: (name: String, desc: String, imageURL: String?)) {
         titleLabel.text = info.name
         descriptionLabel.text = info.desc

@@ -50,16 +50,23 @@ class APIService {
 
     }
 
-    static func getAllCharacters(completion: @escaping (Result<[Character], Error>) -> Void) {
+    static func getAllCharacters(offset: Int? = nil, limit: Int? = nil, completion: @escaping (Result<[Character], Error>) -> Void) {
         guard Reachability.isConnectedToNetwork(),
-              let url = URL(string: Endpoint.characterList.url) else {
+              var url = URL(string: Endpoint.characterList.url) else {
                   completion(.failure(CustomError.noConnection))
                   return
               }
+        var queryItems: [URLQueryItem] = []
+        if let limit = limit {
+            queryItems.append(URLQueryItem(name: "limit", value: limit.description))
+        }
+        if let offset = offset {
+            queryItems.append(URLQueryItem(name: "offset", value: offset.description))
+        }
+        url.append(queryItems: queryItems)
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-
         URLSession.shared.dataTask(with: request) { data, _, error in
 
             if let error = error {

@@ -10,6 +10,8 @@ import Foundation
 class HomeViewModel {
     var characters: [Character] = []
     var delegate: ViewUpdatable?
+    private var maxLimit = 100
+    private var isFetchingInProgress = false
 
     var numberOfItems: Int {
         characters.count
@@ -20,16 +22,28 @@ class HomeViewModel {
         return (name: character.name ?? "", desc: character.description ?? "", imageURL: character.thumbnail?.url)
     }
 
-    func fetchCharacterList() {
-        APIService.getAllCharacters { result in
-            switch result {
-            case .success(let characters):
-                self.characters = characters
-                self.delegate?.didUpdate(with: .success)
-            case .failure(let error):
-                self.delegate?.didUpdate(with: .error(error))
-                break
-            }
+    func fetchCharacterList(offset: Int = 0, limit: Int = 20) {
+        guard isFetchingInProgress == false else { return }
+        isFetchingInProgress = true
+        APIService.getAllCharacters(offset: offset, limit: limit) {[weak self] result in
+            guard let self = self else { return }
+            self.isFetchingInProgress = false
+            self.handleResponse(result: result)
         }
+    }
+
+    private func handleResponse(result: Result<[Character], Error>) {
+        switch result {
+        case .success(let characters):
+            self.characters.append(contentsOf: characters)
+            self.delegate?.didUpdate(with: .success)
+        case .failure(let error):
+            self.delegate?.didUpdate(with: .error(error))
+            break
+        }
+    }
+
+    func loadMoreCharacters(count: Int = 20) {
+        fetchCharacterList(offset: characters.count, limit: count > maxLimit ? maxLimit : count )
     }
 }
