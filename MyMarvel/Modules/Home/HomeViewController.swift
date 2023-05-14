@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
     private var currentTab: Tab {
@@ -117,4 +118,10 @@ extension HomeViewController: UITableViewDataSourcePrefetching {
        func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
 
        }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.search(searchText)
+    }
 }

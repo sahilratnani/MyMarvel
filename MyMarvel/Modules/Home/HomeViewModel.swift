@@ -23,6 +23,7 @@ class HomeViewModel {
         state = .idle
     }
 
+    private var searchText = ""
     private var characters: [Character] = [] {
         didSet {
             filterCharacters()
@@ -45,13 +46,21 @@ class HomeViewModel {
     private func filterCharacters() {
         switch selectedType {
         case .all:
-            filteredCharacters = characters
+            filteredCharacters = characters.filter { containsSearchText(text: $0.name ?? "") }
             state = .success
 
         case .bookmarked:
-            filteredCharacters = characters.filter { $0.bookmarked }
+            filteredCharacters = characters.filter { $0.bookmarked && containsSearchText(text: $0.name ?? "") }
             state = .success
         }
+    }
+
+    //Check for `searchText` within provided text.
+    private func containsSearchText(text: String) -> Bool {
+        guard searchText.isEmpty == false else {
+            return true
+        }
+        return text.localizedCaseInsensitiveContains(searchText)
     }
 
     func getInfo(for indexPath: IndexPath) -> (name: String, desc: String, imageURL: String?, isBookmarked: Bool) {
@@ -67,6 +76,17 @@ class HomeViewModel {
         self.selectedType = type
     }
 
+    // Filter `filteredCharacters` array by search text.
+    //Empty search text indicates all characters to be shown.
+    func search(_ text: String) {
+        searchText = text
+        guard text.isEmpty == false else {
+            filterCharacters()
+            return
+        }
+        filteredCharacters = filteredCharacters.filter { containsSearchText(text: $0.name ?? "") }
+        state = .success
+    }
 }
 
 // MARK: API Calls
