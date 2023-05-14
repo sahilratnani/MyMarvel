@@ -54,6 +54,9 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         }
         cell.configure(info: vm.getInfo(for: indexPath))
+        cell.onBookmarked = {
+            vm.toggleCharacterBookmark(at: indexPath.row)
+        }
         return cell
     }
     

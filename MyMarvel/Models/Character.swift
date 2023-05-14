@@ -18,6 +18,8 @@ class Character: Codable {
     var thumbnail: Thumbnail?
     ///The canonical URL identifier for this resource.
     var resourceURI: String?
+    ///The flag if character is bookmarked
+    lazy var bookmarked = false
 
     enum CodinKeys: String, Codable {
         case id = "id"

@@ -17,9 +17,13 @@ class HomeViewModel {
         characters.count
     }
 
-    func getInfo(for indexPath: IndexPath) -> (name: String, desc: String, imageURL: String?) {
+    func getInfo(for indexPath: IndexPath) -> (name: String, desc: String, imageURL: String?, isBookmarked: Bool) {
         let character = characters[indexPath.row]
-        return (name: character.name ?? "", desc: character.description ?? "", imageURL: character.thumbnail?.url)
+        return (name: character.name ?? "", desc: character.description ?? "", imageURL: character.thumbnail?.url, isBookmarked: character.bookmarked)
+    }
+
+    func toggleCharacterBookmark(at index: Int) {
+        characters[index].bookmarked.toggle()
     }
 
     func fetchCharacterList(offset: Int = 0, limit: Int = 20) {
