@@ -6,18 +6,19 @@
 //
 
 import Foundation
-class Thumbnail: Codable {
+import RealmSwift
+class Thumbnail: Object, Codable {
     ///The directory path of to the image.
-    var path: String?
+    @Persisted var path: String?
     ///The file extension for the image.
-    var `extension`: String?
+    @Persisted var `extension`: String?
 
     var url: String? {
         guard let path = path, let ext = `extension` else { return nil }
         return "\(path)/standard_medium.\(ext)"
     }
 
-    enum CodinKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case path = "path"
         case `extension` = "extension"
     }

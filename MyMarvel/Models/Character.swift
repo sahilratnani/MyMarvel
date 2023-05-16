@@ -6,25 +6,26 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Character: Codable {
+class Character: Object, Codable {
     /// The unique ID of the character resource
-    var id: Int?
+    @Persisted(primaryKey: true) var id: Int?
     /// The name of the character
-    var name: String?
+    @Persisted var name: String?
     ///A short bio or description of the character
-    var description : String?
+    @Persisted var desc : String?
     ///The representative image for this character.
-    var thumbnail: Thumbnail?
+    @Persisted var thumbnail: Thumbnail?
     ///The canonical URL identifier for this resource.
-    var resourceURI: String?
+    @Persisted var resourceURI: String?
     ///The flag if character is bookmarked
-    lazy var bookmarked = false
+    @Persisted var bookmarked = false
 
-    enum CodinKeys: String, Codable {
+    enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
-        case description = "description"
+        case desc = "description"
         case thumbnail = "thumbnail"
         case resourceURI = "resourceURI"
     }

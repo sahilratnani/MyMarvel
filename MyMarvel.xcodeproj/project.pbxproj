@@ -20,6 +20,8 @@
 		3D63D38B2A0FAA91000C87EC /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38A2A0FAA91000C87EC /* DataContainer.swift */; };
 		3D63D38D2A0FB022000C87EC /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38C2A0FB022000C87EC /* MD5.swift */; };
 		3D63D38F2A117D7A000C87EC /* APIServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38E2A117D7A000C87EC /* APIServiceable.swift */; };
+		3D63D3912A13B62E000C87EC /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3902A13B62E000C87EC /* RealmService.swift */; };
+		3D63D3982A13F772000C87EC /* RealmServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3972A13F772000C87EC /* RealmServiceable.swift */; };
 		3D7EB5202A07781D00A72C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */; };
 		3D7EB5222A07781D00A72C66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */; };
 		3D7EB5242A07781D00A72C66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5232A07781D00A72C66 /* HomeViewController.swift */; };
@@ -68,6 +70,8 @@
 		3D63D38A2A0FAA91000C87EC /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		3D63D38C2A0FB022000C87EC /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		3D63D38E2A117D7A000C87EC /* APIServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceable.swift; sourceTree = "<group>"; };
+		3D63D3902A13B62E000C87EC /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		3D63D3972A13F772000C87EC /* RealmServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceable.swift; sourceTree = "<group>"; };
 		3D7EB51C2A07781D00A72C66 /* MyMarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 		3D63D3722A0F6EC2000C87EC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3D63D3942A13BC5C000C87EC /* Protocols */,
 				3D63D37F2A0F88E8000C87EC /* Extensions */,
 				3D63D37C2A0F86B4000C87EC /* ViewState */,
 				3D63D3752A0F7D92000C87EC /* Helpers */,
@@ -177,6 +182,14 @@
 				3D63D3882A0F8D89000C87EC /* CharacterListCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D63D3942A13BC5C000C87EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3D63D3972A13F772000C87EC /* RealmServiceable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		3D7EB5132A07781D00A72C66 = {
@@ -300,6 +313,7 @@
 		3D7EB5562A07E57700A72C66 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				3D63D3902A13B62E000C87EC /* RealmService.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -576,11 +590,13 @@
 				3D63D38F2A117D7A000C87EC /* APIServiceable.swift in Sources */,
 				3D63D3792A0F801C000C87EC /* HomeViewModel.swift in Sources */,
 				3D7EB55C2A08C54F00A72C66 /* Thumbnail.swift in Sources */,
+				3D63D3982A13F772000C87EC /* RealmServiceable.swift in Sources */,
 				3D63D38D2A0FB022000C87EC /* MD5.swift in Sources */,
 				3D7EB5202A07781D00A72C66 /* AppDelegate.swift in Sources */,
 				3D63D3772A0F7DA2000C87EC /* Reachability.swift in Sources */,
 				3D7EB5222A07781D00A72C66 /* SceneDelegate.swift in Sources */,
 				3D63D38B2A0FAA91000C87EC /* DataContainer.swift in Sources */,
+				3D63D3912A13B62E000C87EC /* RealmService.swift in Sources */,
 				3D7EB5582A07E63900A72C66 /* Character.swift in Sources */,
 				3D63D3862A0F8CA9000C87EC /* CharacterListCell.swift in Sources */,
 				3D63D3742A0F6ED0000C87EC /* CustomError.swift in Sources */,

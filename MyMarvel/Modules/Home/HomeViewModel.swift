@@ -14,14 +14,17 @@ enum Types {
 class HomeViewModel {
     var delegate: ViewUpdatable?
     private var apiService: APIServiceable
+    private var realmService: RealmServiceable
+
     private var state: ViewState {
         didSet {
             self.delegate?.didUpdate(with: state)
         }
     }
 
-    init(apiService: APIServiceable = APIService()) {
+    init(apiService: APIServiceable = APIService(), realmService: RealmServiceable = RealmService.shared) {
         self.apiService = apiService
+        self.realmService = realmService
         state = .idle
     }
 
@@ -67,11 +70,13 @@ class HomeViewModel {
 
     func getInfo(for indexPath: IndexPath) -> (name: String, desc: String, imageURL: String?, isBookmarked: Bool) {
         let character = filteredCharacters[indexPath.row]
-        return (name: character.name ?? "", desc: character.description ?? "", imageURL: character.thumbnail?.url, isBookmarked: character.bookmarked)
+        return (name: character.name ?? "", desc: character.desc ?? "", imageURL: character.thumbnail?.url, isBookmarked: character.bookmarked)
     }
 
     func toggleCharacterBookmark(at index: Int) {
-        filteredCharacters[index].bookmarked.toggle()
+        RealmService.shared.update(filteredCharacters[index]) { object in
+            object.bookmarked.toggle()
+        }
     }
 
     func filterByType(type: Types) {
@@ -96,9 +101,19 @@ extension HomeViewModel {
     func fetchCharacterList(offset: Int = 0, limit: Int = 20) {
         guard isFetchingInProgress == false else { return }
         isFetchingInProgress = true
+
+        let realmData = realmService.getData(of: Character.self)
+        let characters = realmData.map { $0 } as [Character]
+        if characters.count > offset {
+            handleResponse(result: .success(characters))
+            self.isFetchingInProgress = false
+            print("Loaded from local")
+            return
+        }
         apiService.getAllCharacters(offset: offset, limit: limit) {[weak self] result in
             guard let self = self else { return }
             self.isFetchingInProgress = false
+            print("Loaded from API")
             self.handleResponse(result: result)
         }
     }
@@ -108,6 +123,7 @@ extension HomeViewModel {
         switch result {
         case .success(let characters):
             self.characters.append(contentsOf: characters)
+            self.realmService.writeData(objects: self.characters, updatePolicy: .all)
             state = .success
         case .failure(let error):
             self.delegate?.didUpdate(with: .error(error))

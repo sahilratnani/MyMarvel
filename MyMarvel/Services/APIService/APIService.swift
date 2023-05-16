@@ -71,21 +71,29 @@ final class APIService: APIServiceable {
 
             if let error = error {
                 print(#function, "🧨 Request: \(request)\nError: \(error)")
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
                 return
             }
 
             guard let data = data else {
-                completion(.failure(CustomError.noData))
+                DispatchQueue.main.async {
+                    completion(.failure(CustomError.noData))
+                }
                 return
             }
 
             do {
                 let data = try JSONDecoder().decode(DataWrapper<Character>.self, from: data)
-                completion(.success(data.data?.results ?? []))
+                DispatchQueue.main.async {
+                    completion(.success(data.data?.results ?? []))
+                }
             } catch let error {
                 print(#function, "🧨 Request: \(request)\nError: \(error)")
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
 
         }.resume()

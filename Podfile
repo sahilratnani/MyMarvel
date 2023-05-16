@@ -7,6 +7,7 @@ target 'MyMarvel' do
 
   # Pods for MyMarvel
   pod 'Kingfisher', '~> 7.0'
+  pod 'RealmSwift', '~>10'
 
   target 'MyMarvelTests' do
     inherit! :search_paths
