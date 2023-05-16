@@ -103,7 +103,7 @@ extension HomeViewModel {
         }
     }
 
-    private func handleResponse(result: APIResult) {
+    private func handleResponse(result: Result<[Character], Error>) {
         guard selectedType == .all else { return }
         switch result {
         case .success(let characters):
