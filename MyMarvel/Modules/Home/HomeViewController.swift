@@ -72,7 +72,7 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         }
         if indexPath.row > vm.numberOfItems-1, currentTab == .allCharacters {
-            vm.loadMoreCharacters()
+            vm.loadCharacters()
             cell.titleLabel.text = "Loading..."
             return cell
         }
@@ -112,7 +112,7 @@ extension HomeViewController: UITableViewDataSourcePrefetching {
             return
         }
         print("prefetching")
-        viewModel.loadMoreCharacters(count: maxIndex.row - viewModel.numberOfItems-1 )
+        viewModel.loadCharacters(count: maxIndex.row - viewModel.numberOfItems-1 )
     }
        
        func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
