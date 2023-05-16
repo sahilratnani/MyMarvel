@@ -48,6 +48,10 @@ class HomeViewModel {
         filteredCharacters.count
     }
 
+    func loadCharacters(count: Int = 20) {
+        fetchCharacterList(offset: characters.count, limit: count > maxLimit ? maxLimit : count )
+    }
+
     private func filterCharacters() {
         switch selectedType {
         case .all:
@@ -98,7 +102,7 @@ class HomeViewModel {
 
 // MARK: API Calls
 extension HomeViewModel {
-    func fetchCharacterList(offset: Int = 0, limit: Int = 20) {
+    private func fetchCharacterList(offset: Int = 0, limit: Int) {
         guard isFetchingInProgress == false else { return }
         isFetchingInProgress = true
 
@@ -130,9 +134,5 @@ extension HomeViewModel {
             state = .error(error)
             break
         }
-    }
-
-    func loadMoreCharacters(count: Int = 20) {
-        fetchCharacterList(offset: characters.count, limit: count > maxLimit ? maxLimit : count )
     }
 }

@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        viewModel?.fetchCharacterList()
+        viewModel?.loadCharacters()
     }
 
     func setupTableView() {
