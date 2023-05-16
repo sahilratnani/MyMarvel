@@ -8,7 +8,7 @@
 import Foundation
 import CommonCrypto
 
-class APIService: APIServiceable {
+final class APIService: APIServiceable {
     private enum ApiURL {
         case db
         case base
