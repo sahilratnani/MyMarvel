@@ -13,13 +13,15 @@ enum Types {
 
 class HomeViewModel {
     var delegate: ViewUpdatable?
+    private var apiService: APIServiceable
     private var state: ViewState {
         didSet {
             self.delegate?.didUpdate(with: state)
         }
     }
 
-    init() {
+    init(apiService: APIServiceable = APIService()) {
+        self.apiService = apiService
         state = .idle
     }
 
@@ -94,14 +96,14 @@ extension HomeViewModel {
     func fetchCharacterList(offset: Int = 0, limit: Int = 20) {
         guard isFetchingInProgress == false else { return }
         isFetchingInProgress = true
-        APIService.getAllCharacters(offset: offset, limit: limit) {[weak self] result in
+        apiService.getAllCharacters(offset: offset, limit: limit) {[weak self] result in
             guard let self = self else { return }
             self.isFetchingInProgress = false
             self.handleResponse(result: result)
         }
     }
 
-    private func handleResponse(result: Result<[Character], Error>) {
+    private func handleResponse(result: APIResult) {
         guard selectedType == .all else { return }
         switch result {
         case .success(let characters):

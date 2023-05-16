@@ -19,6 +19,7 @@
 		3D63D3892A0F8D89000C87EC /* CharacterListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D63D3882A0F8D89000C87EC /* CharacterListCell.xib */; };
 		3D63D38B2A0FAA91000C87EC /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38A2A0FAA91000C87EC /* DataContainer.swift */; };
 		3D63D38D2A0FB022000C87EC /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38C2A0FB022000C87EC /* MD5.swift */; };
+		3D63D38F2A117D7A000C87EC /* APIServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38E2A117D7A000C87EC /* APIServiceable.swift */; };
 		3D7EB5202A07781D00A72C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */; };
 		3D7EB5222A07781D00A72C66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */; };
 		3D7EB5242A07781D00A72C66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5232A07781D00A72C66 /* HomeViewController.swift */; };
@@ -66,6 +67,7 @@
 		3D63D3882A0F8D89000C87EC /* CharacterListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListCell.xib; sourceTree = "<group>"; };
 		3D63D38A2A0FAA91000C87EC /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		3D63D38C2A0FB022000C87EC /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
+		3D63D38E2A117D7A000C87EC /* APIServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceable.swift; sourceTree = "<group>"; };
 		3D7EB51C2A07781D00A72C66 /* MyMarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				3D63D37C2A0F86B4000C87EC /* ViewState */,
 				3D63D3752A0F7D92000C87EC /* Helpers */,
 				3D63D3732A0F6ED0000C87EC /* CustomError.swift */,
+				3D63D38E2A117D7A000C87EC /* APIServiceable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				3D7EB5242A07781D00A72C66 /* HomeViewController.swift in Sources */,
 				3D63D37B2A0F8670000C87EC /* ViewUpdatable.swift in Sources */,
 				3D63D3832A0F894E000C87EC /* UITableViewCell.swift in Sources */,
+				3D63D38F2A117D7A000C87EC /* APIServiceable.swift in Sources */,
 				3D63D3792A0F801C000C87EC /* HomeViewModel.swift in Sources */,
 				3D7EB55C2A08C54F00A72C66 /* Thumbnail.swift in Sources */,
 				3D63D38D2A0FB022000C87EC /* MD5.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 import CommonCrypto
 
-class APIService {
+class APIService: APIServiceable {
     private enum ApiURL {
         case db
         case base
@@ -50,7 +50,7 @@ class APIService {
 
     }
 
-    static func getAllCharacters(offset: Int? = nil, limit: Int? = nil, completion: @escaping (Result<[Character], Error>) -> Void) {
+    func getAllCharacters(offset: Int? = nil, limit: Int? = nil, completion: @escaping (Result<[Character], Error>) -> Void) {
         guard Reachability.isConnectedToNetwork(),
               var url = URL(string: Endpoint.characterList.url) else {
                   completion(.failure(CustomError.noConnection))
