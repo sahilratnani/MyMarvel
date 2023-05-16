@@ -135,7 +135,6 @@
 				3D63D37C2A0F86B4000C87EC /* ViewState */,
 				3D63D3752A0F7D92000C87EC /* Helpers */,
 				3D63D3732A0F6ED0000C87EC /* CustomError.swift */,
-				3D63D38E2A117D7A000C87EC /* APIServiceable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -188,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				3D63D3972A13F772000C87EC /* RealmServiceable.swift */,
+				3D63D38E2A117D7A000C87EC /* APIServiceable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
