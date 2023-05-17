@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 protocol RealmServiceable {
+    var realm: Realm { get }
     ///Fetch data of Type T from realm DB. Returns Results of provided class type
     func getData<T: Object>(of type: T.Type) -> Results<T>
     ///write to realm DB

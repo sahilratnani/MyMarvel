@@ -22,7 +22,7 @@ class HomeViewModel {
         }
     }
 
-    init(apiService: APIServiceable = APIService(), realmService: RealmServiceable = RealmService.shared) {
+    init(apiService: APIServiceable = APIService(), realmService: RealmServiceable = RealmService.defaultInstance) {
         self.apiService = apiService
         self.realmService = realmService
         state = .idle
@@ -78,7 +78,7 @@ class HomeViewModel {
     }
 
     func toggleCharacterBookmark(at index: Int) {
-        RealmService.shared.update(filteredCharacters[index]) { object in
+        realmService.update(filteredCharacters[index]) { object in
             object.bookmarked.toggle()
         }
     }

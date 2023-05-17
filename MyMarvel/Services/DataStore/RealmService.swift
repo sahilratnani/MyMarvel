@@ -9,37 +9,24 @@ import Foundation
 import RealmSwift
 
 final class RealmService: RealmServiceable {
-    static var shared = RealmService()
-
-    private var _realm: Realm?
+    static var defaultInstance = RealmService(configuration: defaultConfig)
     
-    private var realm: Realm {
-        guard let realm = _realm else {
-            if let freshRealm = openRealm(){
-                _realm = freshRealm
-                return freshRealm
-            }
-            else{
-                fatalError("Unable to open realm!")
-            }
-        }
-        return realm
-    }
-
-    private init() {
-    }
-
-    func openRealm() -> Realm? {
+    private static var defaultConfig: Realm.Configuration {
         let username = "MyMarvel"
         var config = Realm.Configuration.defaultConfiguration
         config.fileURL!.deleteLastPathComponent()
         config.fileURL!.appendPathComponent(username)
         config.fileURL!.appendPathExtension("realm")
+        return config
+    }
+
+    var realm: Realm
+
+    init(configuration: Realm.Configuration) {
         do {
-            return try Realm(configuration: config)
+            realm = try Realm(configuration: configuration)
         } catch {
-            assertionFailure("Could not open realm - \(error)")
-            return nil
+            fatalError("Could not open realm - \(error)")
         }
     }
 
