@@ -22,19 +22,24 @@
 		3D63D38F2A117D7A000C87EC /* APIServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D38E2A117D7A000C87EC /* APIServiceable.swift */; };
 		3D63D3912A13B62E000C87EC /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3902A13B62E000C87EC /* RealmService.swift */; };
 		3D63D3982A13F772000C87EC /* RealmServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3972A13F772000C87EC /* RealmServiceable.swift */; };
+		3D63D3A12A143027000C87EC /* RealmServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3A02A143027000C87EC /* RealmServiceTests.swift */; };
+		3D63D3A22A143662000C87EC /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3902A13B62E000C87EC /* RealmService.swift */; };
+		3D63D3A32A143717000C87EC /* RealmServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D63D3972A13F772000C87EC /* RealmServiceable.swift */; };
 		3D7EB5202A07781D00A72C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */; };
 		3D7EB5222A07781D00A72C66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */; };
 		3D7EB5242A07781D00A72C66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5232A07781D00A72C66 /* HomeViewController.swift */; };
 		3D7EB5272A07781D00A72C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EB5252A07781D00A72C66 /* Main.storyboard */; };
 		3D7EB5292A07782000A72C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EB5282A07782000A72C66 /* Assets.xcassets */; };
 		3D7EB52C2A07782000A72C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EB52A2A07782000A72C66 /* LaunchScreen.storyboard */; };
-		3D7EB5372A07782000A72C66 /* MyMarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5362A07782000A72C66 /* MyMarvelTests.swift */; };
 		3D7EB5412A07782000A72C66 /* MyMarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5402A07782000A72C66 /* MyMarvelUITests.swift */; };
 		3D7EB5432A07782000A72C66 /* MyMarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5422A07782000A72C66 /* MyMarvelUITestsLaunchTests.swift */; };
 		3D7EB5582A07E63900A72C66 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5572A07E63900A72C66 /* Character.swift */; };
 		3D7EB55A2A08018700A72C66 /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB5592A08018700A72C66 /* DataWrapper.swift */; };
-		3D7EB55C2A08C54F00A72C66 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB55B2A08C54F00A72C66 /* Thumbnail.swift */; };
 		3D7EB55E2A08C72600A72C66 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB55D2A08C72600A72C66 /* APIService.swift */; };
+		3DA17FAC2A143ACD00D69DD8 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EB55B2A08C54F00A72C66 /* Thumbnail.swift */; };
+		3DE253572A14ED4800B0951F /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE253562A14ED4800B0951F /* TestUtils.swift */; };
+		3DE253592A14EE5100B0951F /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE253582A14EE5100B0951F /* MockData.swift */; };
+		3DE2535B2A15003300B0951F /* CharactersResponseJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE253532A14EC2500B0951F /* CharactersResponseJson.json */; };
 		43D4D391B8F9AA2C5AA82415 /* Pods_MyMarvelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418A92EC10CC6EC7E189BF60 /* Pods_MyMarvelTests.framework */; };
 		859FD82AE0121228937BD66D /* Pods_MyMarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F905C439D58D2949F7BAD3D /* Pods_MyMarvel.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +77,7 @@
 		3D63D38E2A117D7A000C87EC /* APIServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceable.swift; sourceTree = "<group>"; };
 		3D63D3902A13B62E000C87EC /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		3D63D3972A13F772000C87EC /* RealmServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceable.swift; sourceTree = "<group>"; };
+		3D63D3A02A143027000C87EC /* RealmServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceTests.swift; sourceTree = "<group>"; };
 		3D7EB51C2A07781D00A72C66 /* MyMarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7EB51F2A07781D00A72C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7EB5212A07781D00A72C66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +87,6 @@
 		3D7EB52B2A07782000A72C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D7EB52D2A07782000A72C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D7EB5322A07782000A72C66 /* MyMarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D7EB5362A07782000A72C66 /* MyMarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMarvelTests.swift; sourceTree = "<group>"; };
 		3D7EB53C2A07782000A72C66 /* MyMarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7EB5402A07782000A72C66 /* MyMarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMarvelUITests.swift; sourceTree = "<group>"; };
 		3D7EB5422A07782000A72C66 /* MyMarvelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMarvelUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -89,6 +94,9 @@
 		3D7EB5592A08018700A72C66 /* DataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
 		3D7EB55B2A08C54F00A72C66 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		3D7EB55D2A08C72600A72C66 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		3DE253532A14EC2500B0951F /* CharactersResponseJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CharactersResponseJson.json; sourceTree = "<group>"; };
+		3DE253562A14ED4800B0951F /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		3DE253582A14EE5100B0951F /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		418A92EC10CC6EC7E189BF60 /* Pods_MyMarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AACEE8943849F7FC7559ADF /* Pods-MyMarvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMarvel.release.xcconfig"; path = "Target Support Files/Pods-MyMarvel/Pods-MyMarvel.release.xcconfig"; sourceTree = "<group>"; };
 		4C012E89BA6A3D22A25D8B9A /* Pods_MyMarvel_MyMarvelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMarvel_MyMarvelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +200,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3D63D3992A141164000C87EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3D63D39A2A141164000C87EC /* DataStore */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3D63D39A2A141164000C87EC /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				3D63D3A02A143027000C87EC /* RealmServiceTests.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
 		3D7EB5132A07781D00A72C66 = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +255,9 @@
 		3D7EB5352A07782000A72C66 /* MyMarvelTests */ = {
 			isa = PBXGroup;
 			children = (
-				3D7EB5362A07782000A72C66 /* MyMarvelTests.swift */,
+				3DE253552A14ED2900B0951F /* Utils */,
+				3DE253522A14EC0200B0951F /* Resources */,
+				3D63D3992A141164000C87EC /* Services */,
 			);
 			path = MyMarvelTests;
 			sourceTree = "<group>";
@@ -318,6 +344,23 @@
 			path = DataStore;
 			sourceTree = "<group>";
 		};
+		3DE253522A14EC0200B0951F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DE253532A14EC2500B0951F /* CharactersResponseJson.json */,
+				3DE253582A14EE5100B0951F /* MockData.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3DE253552A14ED2900B0951F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3DE253562A14ED4800B0951F /* TestUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		420CD68A880B7F63AD026B6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +414,7 @@
 				3D7EB52E2A07782000A72C66 /* Sources */,
 				3D7EB52F2A07782000A72C66 /* Frameworks */,
 				3D7EB5302A07782000A72C66 /* Resources */,
+				9921DEFCEC58435C9D76D90A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -461,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE2535B2A15003300B0951F /* CharactersResponseJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +619,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyMarvel-MyMarvelUITests/Pods-MyMarvel-MyMarvelUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9921DEFCEC58435C9D76D90A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMarvelTests/Pods-MyMarvelTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMarvelTests/Pods-MyMarvelTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyMarvelTests/Pods-MyMarvelTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -589,7 +651,6 @@
 				3D63D3832A0F894E000C87EC /* UITableViewCell.swift in Sources */,
 				3D63D38F2A117D7A000C87EC /* APIServiceable.swift in Sources */,
 				3D63D3792A0F801C000C87EC /* HomeViewModel.swift in Sources */,
-				3D7EB55C2A08C54F00A72C66 /* Thumbnail.swift in Sources */,
 				3D63D3982A13F772000C87EC /* RealmServiceable.swift in Sources */,
 				3D63D38D2A0FB022000C87EC /* MD5.swift in Sources */,
 				3D7EB5202A07781D00A72C66 /* AppDelegate.swift in Sources */,
@@ -600,6 +661,7 @@
 				3D7EB5582A07E63900A72C66 /* Character.swift in Sources */,
 				3D63D3862A0F8CA9000C87EC /* CharacterListCell.swift in Sources */,
 				3D63D3742A0F6ED0000C87EC /* CustomError.swift in Sources */,
+				3DA17FAC2A143ACD00D69DD8 /* Thumbnail.swift in Sources */,
 				3D63D3812A0F88FF000C87EC /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,7 +670,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D7EB5372A07782000A72C66 /* MyMarvelTests.swift in Sources */,
+				3D63D3A22A143662000C87EC /* RealmService.swift in Sources */,
+				3D63D3A12A143027000C87EC /* RealmServiceTests.swift in Sources */,
+				3DE253592A14EE5100B0951F /* MockData.swift in Sources */,
+				3DE253572A14ED4800B0951F /* TestUtils.swift in Sources */,
+				3D63D3A32A143717000C87EC /* RealmServiceable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

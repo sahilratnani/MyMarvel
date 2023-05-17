@@ -12,6 +12,8 @@ target 'MyMarvel' do
   target 'MyMarvelTests' do
     inherit! :search_paths
     # Pods for testing
+	pod 'RealmSwift/Headers'
+
   end
 
   target 'MyMarvelUITests' do
